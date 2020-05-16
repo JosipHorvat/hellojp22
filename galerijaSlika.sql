@@ -26,4 +26,29 @@ mjesto varchar(50) not null,
 datum datetime 
 );
 
+alter table djelo add foreign key (autor) references autor(sifra);
+alter table izlozba add foreign key (djelo) references djelo(sifra);
 
+insert into autor (ime ,prezime )
+values 
+('Tomo', 'Tomic'),
+('Iva', 'Ivic'),
+('Marija', 'Maric'),
+('Josip','Josipovic'),
+('Boris', 'Borovski');
+select * from autor;
+
+insert into djelo (naziv ,vrsta ,autor,izlozba )
+values ('Zalazak sunca', 'Olovka', 1,1),
+('Pas na livadi', 'Ulje na platnu',2,2),
+('Rad na polju', '3D paint', 3,3),
+('Mrtva priroda', 'kolaz papir',4,4),
+('Dan D', 'tempera',5,5);
+
+insert into izlozba (naziv ,mjesto ,djelo )
+values
+('naivna umjetnost', 'Osijek', 4),
+('fotorealisticni portreti', 'Vukovar',1),
+('pejzazi', 'Zagreb',3),
+('Terror', 'Rijeka', 5),
+('Moderna umjetnost', 'Split', 3);
