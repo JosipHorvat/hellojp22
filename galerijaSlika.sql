@@ -52,3 +52,40 @@ values
 ('pejzazi', 'Zagreb',3),
 ('Terror', 'Rijeka', 5),
 ('Moderna umjetnost', 'Split', 3);
+
+select * from autor;
+select * from autor  
+where sifra >=1 and sifra <=2;
+
+select * from autor where datumRodenja != null;
+select * from autor where sifra = 1;
+
+select * from autor where ime like '%a%';
+
+select * from autor
+order by prezime desc, ime ;
+
+select * from autor order by 3,2;
+select * from autor order by 4,2
+
+select count(*) from autor;
+select count(*) from djelo d ;
+select *from djelo;
+select naziv from djelo;
+select naziv from djelo where naziv like '%lj%';
+
+describe autor;
+describe djelo;
+describe izlozba ;
+
+use knjiznica;
+
+show tables;
+
+select * from autor;
+select * from autor where ime like '%ck%';
+select ime from autor where ime like '%sas%';
+select prezime from autor where ime like '%sas%';
+select sifra from autor where ime like '%d';
+
+
