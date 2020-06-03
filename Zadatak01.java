@@ -19,10 +19,13 @@ public class Zadatak01 {
 		else if (broj3 > broj2 && broj3 >broj1) {
 			System.out.println(broj3);
 		}
-		
+		else if (broj1 == broj2 && broj1 == broj3 && broj2 == broj1 && broj2== broj3 && broj3 == broj2 && broj3 == broj1) {
+			System.out.println(broj1);
+		}
+			
 		
 	}
 	
 	}
 	
-}
+
