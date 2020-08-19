@@ -138,13 +138,25 @@ prijateljica jednako 84te da su vrijednosti kolone carape iz tablice
 zarucnik sadrže niz znakova ba. Podatke posložite po vesta iz tablice
 neprijateljica silazno. (10)*/
 
-select a.prviputa as joinovi, b.eura as su  ,c.vesta as takvi ,d.eura as kakvi, e.carape as jesu
+select a.prviputa as joinovi, b.eura as su, c.vesta as takvi, d.eura as kakvi, e.carape as jesu
 from punac a
 inner join svekar b on b.sifra =a.sifra 
 inner join neprijateljica c on c.sifra  = b.eura 
 inner join prijateljica d on d.sifra = c.vesta 
 inner join zarucnik e on e.sifra = d.eura 
 where d.eura =84 and e.carape like '%BA%'
-group by c.vesta asc;
+order by c.vesta desc;  # asc
 
+/*
+ 6. Prikažite kolone carape i kratkamajica iz tablice zarucnik čiji se
+primarni ključ ne nalaze u tablici zarucnik_punica. (5)
+ */
+select carape, kratkamajica  from zarucnik a
+left join zarucnik_punica b on b.zarucnik = a.sifra 
+where b.zarucnik = null;
+
+#ili ovo 
+select carape, kratkamajica 
+from zarucnik a 
+inner join zarucnik_punica b on b.zarucnik = null;
 
